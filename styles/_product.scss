@@ -2,11 +2,39 @@ section {
   min-height: 100vh;
   min-width: 100vw;
   display: grid;
+  /*grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-auto-rows: 600px;
+  gap: 1rem;*/
   place-items: center;
   background: pink;
 }
 
 .product-container {
   width: 420px;
-  min-height: 750px;
+  min-height: 600px;
+  background: $white;
+  @include flex(column, flex-start, flex-start);
+}
+
+.main-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.product-imgs {
+  width: 100%;
+  @include flex(row, space-evenly, center);
+  flex: 1;
+  .sec-img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+  }
+}
+
+.product-details {
+  flex: 1;
+  padding: 20px 0px 20px 10px;
+  @include flex(column, space-between, flex-start);
 }
